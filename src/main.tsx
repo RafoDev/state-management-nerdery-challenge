@@ -3,19 +3,18 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./app.tsx";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import { BrowserRouter } from "react-router-dom";
+
+const apiUrl = import.meta.env.VITE_GRAPHQL_API;
 
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql",
+  uri: apiUrl,
   cache: new InMemoryCache(),
 });
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </StrictMode>
 );
