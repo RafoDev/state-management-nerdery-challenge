@@ -1,0 +1,14 @@
+@use "/src/shared/styles/colors";
+@use "/src/shared/styles/text-styles";
+
+.container {
+  box-sizing: border-box;
+  width: auto;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: #ffff;
+  background-color: colors.$text-dark;
+}

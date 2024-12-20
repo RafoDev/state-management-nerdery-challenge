@@ -15,7 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  query getCharacters($page: Int!) {\n    characters(page: $page) {\n      info {\n        count\n        next\n      }\n      results {\n        ...CharacterItem\n      }\n    }\n  }\n": types.GetCharactersDocument,
-    "\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n  }\n": types.CharacterItemFragmentDoc,
+    "\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n    episode {\n      id\n      name\n    }\n  }\n": types.CharacterItemFragmentDoc,
 };
 
 /**
@@ -39,7 +39,7 @@ export function graphql(source: "\n  query getCharacters($page: Int!) {\n    cha
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n  }\n"): (typeof documents)["\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n  }\n"];
+export function graphql(source: "\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n    episode {\n      id\n      name\n    }\n  }\n"): (typeof documents)["\n  fragment CharacterItem on Character {\n    id\n    name\n    species\n    image\n    status\n    gender\n    location {\n      name\n    }\n    origin {\n      name\n    }\n    episode {\n      id\n      name\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

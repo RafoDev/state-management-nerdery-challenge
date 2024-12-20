@@ -1,4 +1,6 @@
+import { RiArrowRightSLine } from "@remixicon/react";
 import { FragmentType, graphql, useFragment } from "../../../gql";
+import styles from "./character.module.scss";
 
 export const CharacterFragment = graphql(`
   fragment CharacterItem on Character {
@@ -12,6 +14,10 @@ export const CharacterFragment = graphql(`
       name
     }
     origin {
+      name
+    }
+    episode {
+      id
       name
     }
   }
@@ -29,12 +35,17 @@ export const Character = ({
 
   return (
     <li
+      className={styles.container}
       onClick={() => {
         onSelect(characterData);
       }}
     >
-      <span>{name}</span>
-      <small>{specie}</small>
+      <div className={styles.textContainer}>
+        <h4 className={styles.name}>{name}</h4>
+        <span className={styles.specie}>{specie}</span>
+      </div>
+
+      <RiArrowRightSLine className={styles.arrowIcon} />
     </li>
   );
 };

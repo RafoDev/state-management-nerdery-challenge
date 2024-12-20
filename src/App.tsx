@@ -1,12 +1,9 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import { useState } from "react";
-import "./App.css";
 import { CharacterList } from "./features/characters/character-list";
 import { CharacterDetails } from "./features/characters/character-details/character-details";
 import { CharacterFragment } from "./features/characters/character/character";
 import { FragmentType } from "./gql";
+import styles from "./app.module.scss";
 
 const App = () => {
   const [selectedCharacter, setSelectedCharacter] = useState<FragmentType<
@@ -21,9 +18,19 @@ const App = () => {
 
   return (
     <>
-      <h2>Character List</h2>
-      <CharacterList selectCharacter={selectCharacter} />
-      {selectedCharacter && <CharacterDetails characterDetails={selectedCharacter} />}
+      <nav className={styles.nav}>
+        <h2 className={styles.title}>Ravn Rick and Morty Registry</h2>
+      </nav>
+      <section className={styles.container}>
+        <aside className={styles.characters}>
+          <CharacterList selectCharacter={selectCharacter} />
+        </aside>
+        <main className={styles.details}>
+          {selectedCharacter && (
+            <CharacterDetails characterDetails={selectedCharacter} />
+          )}
+        </main>
+      </section>
     </>
   );
 };

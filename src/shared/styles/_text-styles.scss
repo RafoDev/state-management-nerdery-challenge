@@ -1,0 +1,31 @@
+@use "/src/shared/styles/colors";
+
+@mixin h2-default {
+  font-size: 17px;
+  color: colors.$text-dark;
+}
+
+@mixin h2-low-emphasis {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+@mixin h2-high-emphasis {
+  font-size: 17px;
+  color: colors.$text-emphasis;
+}
+
+@mixin p1-default {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+}
+
+@mixin p1-low-emphasis {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin section {
+  font-size: 36px;
+  height: 500;
+}
