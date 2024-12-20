@@ -1,0 +1,21 @@
+@use "/src/shared/styles/colors";
+
+.container {
+  display: flex;
+  gap: 0.5rem;
+}
+.prop,
+.value {
+  background-color: colors.$text-light;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.value {
+  width: auto;
+  background-color: #33333329;
+  color: colors.$ravn-black;
+}

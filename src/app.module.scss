@@ -1,0 +1,28 @@
+@use "/src/shared/styles/colors";
+@use "/src/shared/styles/text-styles";
+
+.nav {
+  background-color: colors.$ravn-black;
+  height: 52px;
+}
+.container {
+  display: flex;
+}
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f2f2f2;
+  margin: 0;
+  padding: 1rem 33px;
+}
+
+.characters {
+  flex-shrink: 0;
+}
+.details {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

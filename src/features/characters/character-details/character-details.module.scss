@@ -1,0 +1,58 @@
+@use "/src/shared/styles/colors";
+
+.container {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 5px #3333330e;
+  transition: all 0.25s;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.imageContainer {
+  max-width: 200px;
+  overflow: hidden;
+  margin: 0;
+}
+.name {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  margin: 0;
+}
+.episodes {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.episode {
+  background-color: colors.$text-light;
+  color: colors.$ravn-black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 0.9rem;
+  width: auto;
+  background-color: #33333329;
+}

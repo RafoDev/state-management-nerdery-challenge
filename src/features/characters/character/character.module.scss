@@ -1,0 +1,29 @@
+@use "/src/shared/styles/colors";
+@use "/src/shared/styles/text-styles";
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 1s;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  margin: 0;
+  @include text-styles.h2-default;
+}
+.specie {
+  @include text-styles.p1-low-emphasis;
+}
+.arrowIcon {
+  width: 24px;
+}
